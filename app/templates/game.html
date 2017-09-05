@@ -1,0 +1,24 @@
+<div id="gameContent">
+<table class="gameTable">
+  <td valign="bottom">
+    <div class="group0" ng-repeat="i in gameData.column0 track by $index">
+      <image-container ng-click="gemClicked(0, $index)" ng-mouseover="selectGroup(0, $index)" ng-mouseleave="deselectGroup(0, $index)"></image-container>
+    </div>
+  </td>
+  <td valign="bottom">
+    <div class="group1" ng-repeat="i in gameData.column1 track by $index">
+      <image-container ng-click="gemClicked(1, $index)" ng-mouseover="selectGroup(1, $index)" ng-mouseleave="deselectGroup(1, $index)"></image-container>
+    </div>
+  </td>
+  <td valign="bottom">
+    <div class="group2" ng-repeat="i in gameData.column2 track by $index">
+      <image-container ng-click="gemClicked(2, $index)" ng-mouseover="selectGroup(2, $index)" ng-mouseleave="deselectGroup(2, $index)"></image-container>
+    </div>
+  </td>
+</table>
+<p ng-if="gameData.turn1 && !gameData.gameOver">Player 1's turn</p>
+<p ng-if="!gameData.turn1 && !gameData.gameOver">Player 2's turn</p>
+<p ng-if="gameData.gameOver && !gameData.turn1">Player 1 wins!!!</p>
+<p ng-if="gameData.gameOver && gameData.turn1">Player 2 wins!!!</p>
+<md-button ng-click="refresh()" class="md-raised" ng-show="gameData.gameOver">Play Again</md-button>
+</div>

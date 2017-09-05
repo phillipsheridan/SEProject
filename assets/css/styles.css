@@ -1,0 +1,19 @@
+#content {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+}
+#gameContent {
+  margin: auto;
+  width: 50%;
+}
+.selectedGem {
+  background-color: grey;
+}
+.gameTable {
+  height: 500px;
+}
+:focus  {
+    outline: none;
+    border: 0;
+ }
