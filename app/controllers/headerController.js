@@ -5,5 +5,8 @@ app.controller("headerController", function($scope, $state) {
   $scope.goToHome = function() {
     $state.go('home');
   };
+  $scope.goToLogin = function() {
+    $state.go('login');
+  };
 
 });
