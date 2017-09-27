@@ -14,6 +14,10 @@
                 <div ng-message="md-maxlength" class="my-message">Too long.</div>
               </div>
             </md-input-container>
-            <md-button ng-disabled="!Form.$valid" ng-click="" class="md-raised md-primary">&nbsp Login &nbsp</md-button>
+            <md-button ng-disabled="!Form.$valid" ng-click="login()" class="md-raised md-primary">&nbsp Login &nbsp</md-button>
             <md-button ng-disabled="!Form.$valid" ng-click="createUser()" class="md-raised md-primary">&nbsp Create Account &nbsp</md-button>
           </form>
+
+          <p>
+            {{resp}}
+          </p>

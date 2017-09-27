@@ -1,18 +1,18 @@
 app.controller("loginController", function($scope, $http) {
 
-$scope.user = {
+  $scope.user = {
   userName: null,
   password: null
-};
+  };
 
-$scope.createUser = function()
+  $scope.createUser = function()
     {
         data = {
             'userName' : $scope.user.userName,
             'password' : $scope.user.password
         };
 
-        $http.post('assets/php/login.php', data)
+        $http.post('assets/php/createUser.php', data)
         .success(function(data, status, headers, config)
         {
             console.log(status + ' - ' + data);
@@ -21,7 +21,16 @@ $scope.createUser = function()
         {
             console.log('error');
         });
-    }
+    };
+
+    $scope.login = function() {
+      $http.get("assets/php/login.php")
+    .then(function(response) {
+        $scope.resp = response.data;
+    });
+    };
+
+
 
 
 
