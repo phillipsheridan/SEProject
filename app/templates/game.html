@@ -20,5 +20,5 @@
 <p ng-if="!gameData.turn1 && !gameData.gameOver">Player 2's turn</p>
 <p ng-if="gameData.gameOver && !gameData.turn1">Player 1 wins!!!</p>
 <p ng-if="gameData.gameOver && gameData.turn1">Player 2 wins!!!</p>
-<md-button ng-click="refresh()" ng-show="gameData.gameOver">Play Again</md-button>
+<md-button ng-click="refresh()" class="md-raised" ng-show="gameData.gameOver">Play Again</md-button>
 </div>
