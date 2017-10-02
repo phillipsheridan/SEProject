@@ -1,5 +1,7 @@
 app.controller("loginController", function($scope, $http) {
 
+
+  $scope.userLoggedIn = false;
   $scope.user = {
   userName: null,
   password: null
@@ -27,6 +29,8 @@ app.controller("loginController", function($scope, $http) {
       $http.get("assets/php/login.php")
     .then(function(response) {
         $scope.resp = response.data;
+        // process the output from php, need to check if the user exists
+        $scope.userLoggedIn = false;
     });
     };
 

@@ -1,27 +1,30 @@
-<section layout="row" flex>
+
+
 
     <md-sidenav class="md-sidenav-left" md-component-id="left"
                 md-disable-backdrop md-whiteframe="4">
 
-      <md-toolbar class="md-theme-indigo">
-        <!-- could have text here -->
-      </md-toolbar>
+      
 
       <md-content layout-margin>
         <!-- buttons go here -->
         <md-button ng-click="goToNim()" aria-label="Nim">
           Nim
         </md-button>
-        
+
       </md-content>
 
     </md-sidenav>
 
-    <md-content flex layout-padding>
+    <md-content >
 
       <h1> Welcome to our game suite! </h1>
       <p> This is single and two-player game. </p>
       <p> Click on the "Game" tab above to begin.</p>
+      </div>
+<div ng-if="!userLoggedIn">
+
+
 
       <p>
          <b>Log in below to gain access to games.</b>
@@ -49,10 +52,12 @@
                   <md-button ng-disabled="!Form.$valid" ng-click="createUser()" class="md-raised md-primary">&nbsp Create Account &nbsp</md-button>
                 </form>
 
+              </div>
+
+                </div>
+
                 <p>
                   {{resp}}
                 </p>
 
     </md-content>
-
-  </section>

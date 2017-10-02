@@ -1,7 +1,7 @@
 var app = angular.module('app', ['ui.router', 'ngMaterial']);
 
 app.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
-  $urlRouterProvider.otherwise('/home');
+  $urlRouterProvider.otherwise('/login');
   $stateProvider.state('Nim', {
     url: '/Nim',
     templateUrl: 'app/templates/game.html',
@@ -15,4 +15,8 @@ app.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider,
 
 
 
-}]);
+}])
+// .config(function($mdThemingProvider) {
+//   $mdThemingProvider.theme('default')
+//     .dark();
+// });
