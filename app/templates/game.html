@@ -1,5 +1,5 @@
 <div id="gameContent">
-<table class="gameTable">
+<table class="gameTable" computer-turn>
   <td valign="bottom">
     <div class="group0" ng-repeat="i in gameData.column0 track by $index">
       <image-container ng-click="gemClicked(0, $index)" ng-mouseover="selectGroup(0, $index)" ng-mouseleave="deselectGroup(0, $index)"></image-container>
@@ -16,9 +16,9 @@
     </div>
   </td>
 </table>
-<p ng-if="gameData.turn1 && !gameData.gameOver">Player 1's turn</p>
-<p ng-if="!gameData.turn1 && !gameData.gameOver">Player 2's turn</p>
-<p ng-if="gameData.gameOver && !gameData.turn1">Player 1 wins!!!</p>
-<p ng-if="gameData.gameOver && gameData.turn1">Player 2 wins!!!</p>
+<p ng-if="gameData.turn1 && !gameData.gameOver">User's turn</p>
+<p ng-if="!gameData.turn1 && !gameData.gameOver">Computer's turn</p>
+<p ng-if="gameData.gameOver && !gameData.turn1">User wins!!!</p>
+<p ng-if="gameData.gameOver && gameData.turn1">Computer wins!!!</p>
 <md-button ng-click="refresh()" class="md-raised" ng-show="gameData.gameOver">Play Again</md-button>
 </div>

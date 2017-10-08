@@ -18,6 +18,14 @@ var checkForEmptyColumns = function() {
 
 };
 
+$scope.isGameOver = function() {
+  if (checkForEmptyColumns() == 0) {
+    console.log(checkForEmptyColumns());
+    return true;
+  }
+  return false;
+}
+
 
 $scope.gemClicked= function(col, index) {
   var initialLength = $scope.gameData["column" + col].length;
@@ -28,6 +36,7 @@ $scope.gemClicked= function(col, index) {
   }
   $scope.deselectGroup(col, initialLength - index);
   $scope.gameData.turn1 = !$scope.gameData.turn1;
+  $scope.$broadcast("turnover");
 
   if (!checkForEmptyColumns())
  {
@@ -35,6 +44,25 @@ $scope.gemClicked= function(col, index) {
  }
 
 };
+
+
+$scope.getColumnCount = function(columnNumber) {
+  return $scope.gameData["column" + columnNumber].length;
+};
+
+$scope.isColumnEmpty = function(columnNumber) {
+  if ($scope.getColumnCount(columnNumber) == 0) {
+    return true;
+  }
+  return false;
+
+};
+
+$scope.getRandomColumn = function(number) {
+  return (Math.trunc(Math.random() * number));
+}
+
+
 
 $scope.selectGroup = function(col, index) {
   //alert('index is ' + index);
@@ -71,6 +99,8 @@ $scope.deselectGroup = function(col, index) {
 $scope.refresh = function() {
   location.reload();
 };
+
+
 
 
 
