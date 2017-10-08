@@ -1,4 +1,4 @@
-app.controller("gameController", function($scope, $state) {
+app.controller("gameController", function($scope, $state, $mdSidenav) {
 
   $scope.gameData = {
   column0: [1, 1, 1, 1, 1],
@@ -6,6 +6,11 @@ app.controller("gameController", function($scope, $state) {
   column2 : [1, 1, 1],
   turn1 : true,
   gameOver : false
+};
+
+$scope.toggleLeft = function() {
+  $mdSidenav('left').toggle();
+  console.log("toggle");
 };
 
 var checkForEmptyColumns = function() {

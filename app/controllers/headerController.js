@@ -12,6 +12,7 @@ app.controller("headerController", function($scope, $state, $mdSidenav) {
 
   $scope.toggleLeft = function() {
     $mdSidenav('left').toggle();
+    console.log("toggle");
   };
 
 

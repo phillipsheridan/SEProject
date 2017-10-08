@@ -7,6 +7,7 @@ app.controller("loginController", function($scope, $http) {
   password: null
   };
 
+
   $scope.createUser = function()
     {
         data = {
