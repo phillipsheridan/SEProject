@@ -28,6 +28,9 @@ $scope.isGameOver = function() {
 
 
 $scope.gemClicked= function(col, index) {
+  //check if turn1 is true, if not don't do any of this
+  //console.log("user's turn is: " + $scope.gameData.turn1);
+  if ($scope.gameData.turn1) {
   var initialLength = $scope.gameData["column" + col].length;
   console.log("column: " + col);
   console.log("index: " + index);
@@ -42,7 +45,7 @@ $scope.gemClicked= function(col, index) {
  {
    $scope.gameData.gameOver = true;
  }
-
+}
 };
 
 
